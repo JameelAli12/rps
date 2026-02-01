@@ -19,7 +19,7 @@ const updateScore = () => {
     u.textContent = ' ' + userScore;
     c.textContent = ' ' + compScore;
     rounds.textContent = ' ' + currRound;
-    drawnRounds.textContent = ' ' + currRound - (userScore + compScore)
+    drawnRounds.textContent = ' ' + (currRound - (userScore + compScore))
 }
 
 const getComputerChoice = () => {
@@ -92,12 +92,16 @@ scissor.addEventListener("click", function(){
 })
 
 restart.addEventListener("click", () => {
+    userScore = 0;
+    compScore = 0;
+    currRound = 0;
     u.textContent = 0;
     c.textContent = 0;
     rounds.textContent = 0;
     drawnRounds.textContent = 0;
     userMove.textContent = '';
     computerMove.textContent = '';
+    won.textContent = ''
 })
 
 

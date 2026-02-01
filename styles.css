@@ -1,0 +1,63 @@
+body {
+    background-color: blue;
+    color: whitesmoke;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+h1 {
+    font-size: 50px;
+    color:blanchedalmond;
+}
+
+#heading {
+    border-radius: 10px;
+    margin: 30px auto;
+    box-shadow: 0 0 5px rgb(2, 2, 2);
+    width: 600px;
+    padding: 10px;
+    background-color: rgb(112, 34, 202);
+}
+
+#round, #dround, #user, #comp, #u, #c {
+    color: rgb(218, 197, 159);
+    font-size: 25px;
+}
+
+#r, #d, #user-move, #comp-move, #u-score, #c-score {
+    font-family:'Times New Roman', Times, serif;
+    font-size: 40px;
+}
+
+#rock, #paper, #scissor {
+    width: 200px;
+    height: 100px;
+    font-size: 40px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+#info {
+    border: 2px solid black;
+    width: 600px;
+    margin: 30px auto;
+    background-color: rgba(10, 236, 78, 0.582);
+    color: rgb(241, 237, 237);
+}
+
+#scores {
+    box-shadow: 5px 5px 5px black;
+    width: 600px;
+    margin: 20px auto;
+    border-left: 2px solid black;
+    border-top: 2px solid black;
+    padding-bottom: 10px;
+}
+
+#restart {
+    background-color: white;
+    width: 300px;
+    height: 100px;
+    border-radius: 5px;
+    font-size: 40px;
+}
