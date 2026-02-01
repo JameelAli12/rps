@@ -1,3 +1,13 @@
+const rounds = document.getElementById("round")
+const rock = document.getElementById("rock")
+const paper = document.getElementById("paper")
+const scissor = document.getElementById("scissor")
+const user = document.getElementById("user")
+const comp = document.getElementById("comp")
+const u = document.getElementById("u")
+const c = document.getElementById("c")
+const won = document.getElementById("won")
+
 const getComputerChoice = () => {
     const moves = ['r','p','s']
     const index = Math.floor(Math.random() * 3)
