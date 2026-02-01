@@ -4,9 +4,57 @@ const getComputerChoice = () => {
     return moves[index]
 }
 
+const computerChoice = getComputerChoice();
+
 const getUserChoice = () => {
     return prompt("Choose your move: \n (r for rock, p for paper, s for scissor")
 }
+
+const userChoice = getUserChoice().toLowerCase()
+
+let userScore = 0;
+let compScore = 0;
+
+const declareWinner = () => {
+    console.log('Your Move:'+userChoice)
+    console.log('Computer Move:'+computerChoice)
+    
+    if(computerChoice === 'r' && userChoice === 's') {
+        return 'Computer Won'
+    }
+    else if(computerChoice === 's' && userChoice === 'p') {
+        return 'Computer Won'
+    }
+    else if(computerChoice === 'p' && userChoice === 'r') {
+        return 'Computer Won'
+    }
+    else if(computerChoice === 's' && userChoice === 'r') {
+        return 'You Won'
+    }
+    else if(computerChoice === 'p' && userChoice === 's') {
+        return 'You Won'
+    }
+    else if(computerChoice === 'r' && userChoice === 's') {
+        return 'You Won'
+    }
+    return "It's Draw"
+}
+const winner = declareWinner()
+const trackScores = () => {
+    if(winner === 'Computer Won') {
+        compScore++
+    }
+    else if(winner === 'You Won') {
+        userScore++
+    }
+    console.log(`Your Score: ${userScore} \n Computer Score: ${compScore}`)
+}
+
+const playGame = () => {
+    declareWinner();
+    trackScores();
+}
+
 
 
 
@@ -16,3 +64,8 @@ const getUserChoice = () => {
 //and then the computer will respond randomly against the player move.
 //now there are cases to discuss about who won. 
 //other than that after the game finshes and the winner is declared the game should ask for the move again.
+
+//cases: r vs s vs p
+// r wins over s
+// s wins over p
+// p wins over r
