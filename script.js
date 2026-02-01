@@ -4,39 +4,28 @@ const getComputerChoice = () => {
     return moves[index]
 }
 
-const computerChoice = getComputerChoice();
-
 const getUserChoice = () => {
     return prompt("Choose your move: \n (r for rock, p for paper, s for scissor")
 }
 
-const userChoice = getUserChoice().toLowerCase()
-
 const winner = (comp, user) => {
-    if(comp === 'r' && user === 's') {
-        return 'Computer Won'       
-    }
-    else if(comp === 's' && user === 'p') {
-        return 'Computer Won'
-    }
-    else if(comp === 'p' && user === 'r') {
-        return 'Computer Won'
-    }
-    else if(comp === 's' && user === 'r') {
-        return 'You Won'
-    }
-    else if(comp === 'p' && user === 's') {
-        return 'You Won'
-    }
-    else if(comp === 'r' && user === 's') {
-        return 'You Won'
-    }
+    if((comp === 'r' && user === 's') || (comp === 's' && user === 'p') || (comp === 'p' && user === 'r')) return 'Computer Won'    
+
+    else if((comp === 's' && user === 'r') ||(comp === 'p' && user === 's')|| (comp === 'r' && user === 'p')) return 'You Won'
+
+    else if(user !== 's' && user !== 'r' && user !== 'p') return 'Please enter a valid option.'
+
     return "It's Draw"
 }
 let userScore = 0;
 let compScore = 0;
 
 const playGame = () => {
+
+    const computerChoice = getComputerChoice();
+    const userChoice = getUserChoice().toLowerCase()
+     if(userChoice === '' && userChoice!== 'r' && userChoice!== 'p' && userChoice!== 's') return;
+
     console.log(`Your move: ${userChoice}   Computer Move: ${computerChoice}`)
     const won = winner(computerChoice,userChoice)
     if(won === 'You Won') {
@@ -49,13 +38,22 @@ const playGame = () => {
     }
     else {
         console.log(won)
-        'no score added'
+        console.log('no score added')
     }
     console.log(`Your Score: ${userScore}   Computer Score: ${compScore}`)
 }
 
 for(let i=1; i<=5; i++) {
-    playGame();
+    playGame()
+}
+if(userScore > compScore) {
+        console.log("Congratulations! You won the game.")
+    }
+else if(userScore < compScore) {
+    console.log("Alas! You lost the game. Better luck next time.")
+}
+else {
+        console.log("The game is drawn. No one won.")
 }
 
 
