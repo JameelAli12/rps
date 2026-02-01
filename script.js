@@ -54,6 +54,9 @@ const playGame = () => {
     console.log(`Your Score: ${userScore}   Computer Score: ${compScore}`)
 }
 
+for(let i=1; i<=5; i++) {
+    playGame();
+}
 
 
 
