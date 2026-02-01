@@ -12,48 +12,48 @@ const getUserChoice = () => {
 
 const userChoice = getUserChoice().toLowerCase()
 
-let userScore = 0;
-let compScore = 0;
-
-const declareWinner = () => {
-    console.log('Your Move:'+userChoice)
-    console.log('Computer Move:'+computerChoice)
-    
-    if(computerChoice === 'r' && userChoice === 's') {
+const winner = (comp, user) => {
+    if(comp === 'r' && user === 's') {
+        return 'Computer Won'       
+    }
+    else if(comp === 's' && user === 'p') {
         return 'Computer Won'
     }
-    else if(computerChoice === 's' && userChoice === 'p') {
+    else if(comp === 'p' && user === 'r') {
         return 'Computer Won'
     }
-    else if(computerChoice === 'p' && userChoice === 'r') {
-        return 'Computer Won'
-    }
-    else if(computerChoice === 's' && userChoice === 'r') {
+    else if(comp === 's' && user === 'r') {
         return 'You Won'
     }
-    else if(computerChoice === 'p' && userChoice === 's') {
+    else if(comp === 'p' && user === 's') {
         return 'You Won'
     }
-    else if(computerChoice === 'r' && userChoice === 's') {
+    else if(comp === 'r' && user === 's') {
         return 'You Won'
     }
     return "It's Draw"
 }
-const winner = declareWinner()
-const trackScores = () => {
-    if(winner === 'Computer Won') {
-        compScore++
-    }
-    else if(winner === 'You Won') {
-        userScore++
-    }
-    console.log(`Your Score: ${userScore} \n Computer Score: ${compScore}`)
-}
+let userScore = 0;
+let compScore = 0;
 
 const playGame = () => {
-    declareWinner();
-    trackScores();
+    console.log(`Your move: ${userChoice}   Computer Move: ${computerChoice}`)
+    const won = winner(computerChoice,userChoice)
+    if(won === 'You Won') {
+        console.log(won)
+        userScore++
+    }
+    else if(won === 'Computer Won') {
+        console.log(won)
+        compScore++
+    }
+    else {
+        console.log(won)
+        'no score added'
+    }
+    console.log(`Your Score: ${userScore}   Computer Score: ${compScore}`)
 }
+
 
 
 
