@@ -15,6 +15,8 @@ let compScore = 0;
 let currRound = 0;
 const maxRounds = 10;
 
+if(currRound === 0) alert('There will be 10 rounds. Each round win gives one plus point and there is no negative scoring. Good Luck!')
+
 const updateScore = () => {
     u.textContent = ' ' + userScore;
     c.textContent = ' ' + compScore;
